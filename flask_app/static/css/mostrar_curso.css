@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    padding: 15px 50px;
+}
+
+.estudiantes {
+    padding: 10px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+td, th {
+    padding: 8px;
+}

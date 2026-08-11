@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Curso</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mostrar_curso.css') }}">
+</head>
+<body>
+    <h1>Estudiantes de {{nombre_curso}}</h1>
+    <div class="estudiantes">
+        {%if estudiantes%}
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Edad</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for estudiante in estudiantes%}
+                    <tr>
+                        <td>{{estudiante.nombre}}</td>
+                        <td>{{estudiante.apellido}}</td>
+                        <td>{{estudiante.edad}}</td>
+                    </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+        {%else%}
+            <p>No hay estudiantes registrados en {{nombre_curso}}</p>
+        {%endif%}
+    </div>
+    <a href="/" class="boton">Inicio</a>
+</body>
+</html>

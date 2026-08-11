@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Estudiante</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/agregar_estudiante.css') }}">
+</head>
+<body>
+    <h1>Nuevo Estudiante</h1>
+
+    <form action="/crear_estudiante" method="post">
+        
+        <div>
+            <label for="curso">Curso: </label>
+            <select name="curso" id="curso" required>
+                {%for curso in cursos%}
+                    <option value="{{curso.id}}">{{curso.nombre}}</option>
+                {%endfor%} 
+            </select>
+        </div>
+
+        <div>
+            <label for="nombre">Nombre: </label>
+            <input type="text" name="nombre" required>
+        </div>
+
+        <div>
+            <label for="apellido">Apellido: </label>
+            <input type="text" name="apellido" required>
+        </div>
+
+        <div>
+            <label for="edad">Edad: </label>
+            <input type="number" name="edad" required>
+        </div>
+
+        <input type="submit" value="Crear">
+    </form>
+
+    <a href="/" class="boton">Inicio</a>
+</body>
+</html>
